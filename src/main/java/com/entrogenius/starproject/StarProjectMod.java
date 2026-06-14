@@ -1,6 +1,6 @@
-package com.example.modid;
+package com.entrogenius.starproject;
 
-import com.example.modid.proxy.IProxy;
+import com.entrogenius.starproject.proxy.IProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -8,11 +8,15 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Tags.MOD_ID, name = Tags.MOD_NAME, version = Tags.VERSION)
-public class ExampleMod {
+public class StarProjectMod {
 
     public static final Logger LOGGER = LogManager.getLogger(Tags.MOD_NAME);
 
-    @SidedProxy(modId = Tags.MOD_ID, clientSide = "com.example.modid.proxy.ClientProxy", serverSide = "com.example.modid.proxy.CommonProxy")
+    @SidedProxy(
+            modId = Tags.MOD_ID,
+            clientSide = "com.entrogenius.starproject.client.ClientProxy",
+            serverSide = "com.entrogenius.starproject.common.CommonProxy"
+    )
     public static IProxy proxy;
     /**
      * <a href="https://cleanroommc.com/wiki/forge-mod-development/event#overview">
